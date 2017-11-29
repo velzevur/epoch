@@ -131,7 +131,6 @@ def test_not_enough_tokens():
     expected_balance = bob_balance.balance + coinbase_reward * blocks_mined
     assert_equals(bob_new_balance.balance, expected_balance)
 
-    alice_balance = Balance(balance=0) 
     # ensure Alice balance had not changed
     alice_balance = common.get_account_balance(bob_api, pub_key=test_settings["spend_tx"]["alice_pubkey"])
     print("Coinbase reward is " + str(coinbase_reward) + ", had mined " +
